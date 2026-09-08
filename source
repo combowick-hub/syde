@@ -6003,7 +6003,7 @@ function syde:Init(library)
 
 				function ParagraphSettings:Set(text, title)
 					pcall(function() Para.Frame.title.Text = title end)
-					Para.Content.Text = text
+					if Para:FindFirstChild("Content") then Para.Content.Text = text end
 				end
 
 				ParagraphSettings.Instance = Para
